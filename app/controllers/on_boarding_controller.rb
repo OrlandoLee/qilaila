@@ -5,8 +5,18 @@ class OnBoardingController < ApplicationController
   
   def create
     id = params[:question][:id]
+    @question = Question.find(id)
     params[:question][:potential_answers].each do |content|
-      Answer.create(question_id: id, content: content) if content.present?
+      if content.present?
+        answer = Answer.find_or_initialize_by(question_id: id)
+        answer.update_attributes(content: content) 
+      end
     end
+   @question =  @question.next
+   if @question.present?
+     render :create
+   else
+     render :finish
+   end
   end
 end

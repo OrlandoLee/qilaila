@@ -30,11 +30,15 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #F8F3F2;
+}
+
+.frontpage {
   background: no-repeat 50% 50% fixed; 
   background-image: url('bg3.jpg');
   background-size: cover;
 }
+
 body {
   color: #fff;
   text-align: center;

@@ -13,15 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150321190053) do
 
-  create_table "answer_meta", force: true do |t|
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "answers", force: true do |t|
-    t.string   "answer_meta_id"
-    t.string   "integer"
     t.string   "user_id"
     t.string   "question_id"
     t.datetime "created_at"

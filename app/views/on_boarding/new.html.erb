@@ -1,0 +1,5 @@
+<%= simple_form_for @question, url: on_boarding_index_path, method: :post do |f| %>
+  <%= f.collection_check_boxes :potential_answers, @question.potential_answers, :content, :content %>
+  <%= f.input :id, :as => :hidden, :input_html => { :id => @question.id } %>
+  <%= f.button :submit %>
+<% end %>

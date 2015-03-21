@@ -11,6 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150321190053) do
+
+  create_table "answer_meta", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "answers", force: true do |t|
+    t.string   "answer_meta_id"
+    t.string   "integer"
+    t.string   "user_id"
+    t.string   "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content"
+  end
+
+  create_table "potential_answers", force: true do |t|
+    t.integer  "question_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

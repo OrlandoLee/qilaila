@@ -7,22 +7,27 @@
 	<%= f.simple_fields_for :breakfast do |bf| %>
 		<%= bf.input :explanation %>
 		<%= bf.input :time, as: :time %>
+		<%= bf.file_field :images, multiple: true %>
 	<% end %>
 	<%= f.simple_fields_for :lunch do |lf| %>
 		<%= lf.input :explanation %>
 		<%= lf.input :time, as: :time %>
+		<%= lf.file_field :images, multiple: true %>
 	<% end %>
 	<%= f.simple_fields_for :dinner do |df| %>
 		<%= df.input :explanation %>
 		<%= df.input :time, as: :time %>
+		<%= df.file_field :images, multiple: true %>
 	<% end %>
 	<%= f.simple_fields_for :exercise do |ef| %>
 		<%= ef.input :explanation %>
 		<%= ef.input :time, as: :time %>
+		<%= ef.file_field :images, multiple: true %>
 	<% end %>
 	<%= f.simple_fields_for :snacks do |sf| %>
 		<%= sf.input :explanation %>
 		<%= sf.input :time, as: :time %>
+		<%= sf.file_field :images, multiple: true %>
 	<% end %>
   </div>
 

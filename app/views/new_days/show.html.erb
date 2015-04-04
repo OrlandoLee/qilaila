@@ -14,26 +14,41 @@
   <strong>Breakfast:</strong>
   <%= @new_day.breakfast.explanation %>
   <%= @new_day.breakfast.comment %>
+  <% @new_day.breakfast.images.each do |image| %>
+	<%= image_tag image.url %>
+  <% end %>
 </p>
 <p>
   <strong>Lunch:</strong>
   <%= @new_day.lunch.explanation %>
   <%= @new_day.lunch.comment %>
+  <% @new_day.lunch.images.each do |image| %>
+	<%= image_tag image.url %>
+  <% end %>
 </p>
 <p>
   <strong>Dinner:</strong>
   <%= @new_day.dinner.explanation %>
   <%= @new_day.dinner.comment %>
+  <% @new_day.dinner.images.each do |image| %>
+	<%= image_tag image.url %>
+  <% end %>
 </p>
 <p>
   <strong>Exercise:</strong>
   <%= @new_day.exercise.explanation %>
   <%= @new_day.exercise.comment %>
+  <% @new_day.exercise.images.each do |image| %>
+	<%= image_tag image.url %>
+  <% end %>
 </p>
 <p>
   <strong>Snack:</strong>
   <%= @new_day.snacks.first.explanation %>
   <%= @new_day.snacks.first.comment %>
+  <% @new_day.snacks.first.images.each do |image| %>
+	<%= image_tag image.url %>
+  <% end %>
 </p>
 
 

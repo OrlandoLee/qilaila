@@ -30,7 +30,7 @@ class NewDaysController < ApplicationController
   # POST /new_days.json
   def create
     @new_day = NewDay.new(new_day_params)
-
+    @new_day.breakfast.images = new_day_params[:breakfast_attributes][:images]
     respond_to do |format|
       if @new_day.save
         format.html { redirect_to @new_day, notice: 'New day was successfully created.' }

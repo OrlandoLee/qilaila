@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/carrierwaveuploader/carrierwave.git
+  revision: e43e7159af0dfadcd05bf54b81a3b6b3e79c501c
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,8 +76,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.11.0)
-    mysql2 (0.3.18)
-    orm_adapter (0.5.0)
+    pg (0.18.1)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -130,11 +139,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
+  carrierwave!
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2
+  pg
   rails (= 4.1.9)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

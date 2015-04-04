@@ -12,23 +12,28 @@
 
 <p>
   <strong>Breakfast:</strong>
+  <%= @new_day.breakfast.explanation %>
   <%= @new_day.breakfast.comment %>
 </p>
 <p>
   <strong>Lunch:</strong>
-  <%= @new_day.lunch %>
+  <%= @new_day.lunch.explanation %>
+  <%= @new_day.lunch.comment %>
 </p>
 <p>
   <strong>Dinner:</strong>
-  <%= @new_day.dinner %>
+  <%= @new_day.dinner.explanation %>
+  <%= @new_day.dinner.comment %>
 </p>
 <p>
   <strong>Exercise:</strong>
-  <%= @new_day.exercise %>
+  <%= @new_day.exercise.explanation %>
+  <%= @new_day.exercise.comment %>
 </p>
 <p>
   <strong>Snack:</strong>
-  <%= @new_day.snacks %>
+  <%= @new_day.snacks.first.explanation %>
+  <%= @new_day.snacks.first.comment %>
 </p>
 
 

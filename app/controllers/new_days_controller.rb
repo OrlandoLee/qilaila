@@ -15,6 +15,11 @@ class NewDaysController < ApplicationController
   # GET /new_days/new
   def new
     @new_day = NewDay.new
+    @new_day.breakfast = Breakfast.new
+    @new_day.lunch = Lunch.new
+    @new_day.dinner = Dinner.new
+    @new_day.snacks << Snack.new
+    @new_day.exercise = Exercise.new
   end
 
   # GET /new_days/1/edit
@@ -69,6 +74,6 @@ class NewDaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def new_day_params
-      params.require(:new_day).permit(:comment, :date)
+      params.require(:new_day).permit!
     end
 end

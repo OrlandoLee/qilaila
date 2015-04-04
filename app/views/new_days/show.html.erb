@@ -10,5 +10,27 @@
   <%= @new_day.date %>
 </p>
 
+<p>
+  <strong>Breakfast:</strong>
+  <%= @new_day.breakfast.comment %>
+</p>
+<p>
+  <strong>Lunch:</strong>
+  <%= @new_day.lunch %>
+</p>
+<p>
+  <strong>Dinner:</strong>
+  <%= @new_day.dinner %>
+</p>
+<p>
+  <strong>Exercise:</strong>
+  <%= @new_day.exercise %>
+</p>
+<p>
+  <strong>Snack:</strong>
+  <%= @new_day.snacks %>
+</p>
+
+
 <%= link_to 'Edit', edit_new_day_path(@new_day) %> |
 <%= link_to 'Back', new_days_path %>

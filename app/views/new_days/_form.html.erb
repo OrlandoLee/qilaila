@@ -4,6 +4,26 @@
   <div class="form-inputs">
     <%= f.input :comment %>
     <%= f.input :date %>
+	<%= f.simple_fields_for :breakfast do |bf| %>
+		<%= bf.input :explaination %>
+		<%= bf.input :time, as: :time %>
+	<% end %>
+	<%= f.simple_fields_for :lunch do |lf| %>
+		<%= lf.input :explaination %>
+		<%= lf.input :time, as: :time %>
+	<% end %>
+	<%= f.simple_fields_for :dinner do |df| %>
+		<%= df.input :explaination %>
+		<%= df.input :time, as: :time %>
+	<% end %>
+	<%= f.simple_fields_for :exercise do |ef| %>
+		<%= ef.input :explaination %>
+		<%= ef.input :time, as: :time %>
+	<% end %>
+	<%= f.simple_fields_for :snacks do |sf| %>
+		<%= sf.input :explaination %>
+		<%= sf.input :time, as: :time %>
+	<% end %>
   </div>
 
   <div class="form-actions">

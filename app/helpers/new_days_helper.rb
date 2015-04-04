@@ -1,0 +1,2 @@
+module NewDaysHelper
+end

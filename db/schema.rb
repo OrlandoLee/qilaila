@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322000629) do
+ActiveRecord::Schema.define(version: 20150404033534) do
 
   create_table "answers", force: true do |t|
     t.string   "user_id"
@@ -19,6 +19,50 @@ ActiveRecord::Schema.define(version: 20150322000629) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "content"
+  end
+
+  create_table "breakfasts", force: true do |t|
+    t.text     "comment"
+    t.text     "explaination"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dinners", force: true do |t|
+    t.text     "comment"
+    t.text     "explaination"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises", force: true do |t|
+    t.text     "comment"
+    t.text     "explaination"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lunches", force: true do |t|
+    t.text     "comment"
+    t.text     "explaination"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "new_days", force: true do |t|
+    t.text     "comment"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "potential_answers", force: true do |t|
@@ -30,6 +74,15 @@ ActiveRecord::Schema.define(version: 20150322000629) do
 
   create_table "questions", force: true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "snacks", force: true do |t|
+    t.text     "comment"
+    t.text     "explaination"
+    t.time     "time"
+    t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

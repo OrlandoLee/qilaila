@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @new_day.comment %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @new_day.date %>
+</p>
+
+<%= link_to 'Edit', edit_new_day_path(@new_day) %> |
+<%= link_to 'Back', new_days_path %>

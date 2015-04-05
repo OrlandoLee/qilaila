@@ -1,56 +1,40 @@
+    <div class="container marketing"> 
+<hr class="featurette-divider">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @new_day.comment %>
-</p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @new_day.date %>
-</p>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"><%= @new_day.date %> </h2>
+		<h4><span class="text-muted"> <%= @new_day.breakfast.explanation.present? ? "早餐：#{@new_day.breakfast.explanation}。" : '' %></span></h4>
+		<h4><span class="text-muted"><%= @new_day.lunch.explanation.present? ? "午餐：#{@new_day.lunch.explanation}。" : '' %></span></h4>
+		<h4><span class="text-muted"><%= @new_day.dinner.explanation.present? ? "晚餐：#{@new_day.dinner.explanation}。" : '' %></span></h4>
+		<h4><span class="text-muted"><%= @new_day.exercise.explanation.present? ? "运动情况：#{@new_day.exercise.explanation}。" : '' %></span></h4>
+		  <h2 class="featurette-heading">营养师反馈 </h2>
+          <h3 class="lead"><%= @new_day.comment %></h3>
+        </div>
+        <div class="col-md-2">
+		  <% @new_day.breakfast.images.each do |image| %>
+			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% end %>
+		  <% @new_day.lunch.images.each do |image| %>
+			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% end %>
+		  <% @new_day.dinner.images.each do |image| %>
+			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% end %>
+		  <% @new_day.snacks.first.images.each do |image| %>
+			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% end %>
+		</div>
+		<div class="col-md-3">
+		  <% @new_day.exercise.images.each do |image| %>
+			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% end %>
+        </div>
+      </div>
 
-<p>
-  <strong>Breakfast:</strong>
-  <%= @new_day.breakfast.explanation %>
-  <%= @new_day.breakfast.comment %>
-  <% @new_day.breakfast.images.each do |image| %>
-	<%= image_tag image.url %>
-  <% end %>
-</p>
-<p>
-  <strong>Lunch:</strong>
-  <%= @new_day.lunch.explanation %>
-  <%= @new_day.lunch.comment %>
-  <% @new_day.lunch.images.each do |image| %>
-	<%= image_tag image.url %>
-  <% end %>
-</p>
-<p>
-  <strong>Dinner:</strong>
-  <%= @new_day.dinner.explanation %>
-  <%= @new_day.dinner.comment %>
-  <% @new_day.dinner.images.each do |image| %>
-	<%= image_tag image.url %>
-  <% end %>
-</p>
-<p>
-  <strong>Exercise:</strong>
-  <%= @new_day.exercise.explanation %>
-  <%= @new_day.exercise.comment %>
-  <% @new_day.exercise.images.each do |image| %>
-	<%= image_tag image.url %>
-  <% end %>
-</p>
-<p>
-  <strong>Snack:</strong>
-  <%= @new_day.snacks.first.explanation %>
-  <%= @new_day.snacks.first.comment %>
-  <% @new_day.snacks.first.images.each do |image| %>
-	<%= image_tag image.url %>
-  <% end %>
-</p>
-
+      </div>
 
 <%= link_to 'Edit', edit_new_day_path(@new_day) %> |
 <%= link_to 'Back', new_days_path %>

@@ -10,6 +10,7 @@
 		<h4><span class="text-muted"><%= @new_day.lunch.explanation.present? ? "午餐：#{@new_day.lunch.explanation}。" : '' %></span></h4>
 		<h4><span class="text-muted"><%= @new_day.dinner.explanation.present? ? "晚餐：#{@new_day.dinner.explanation}。" : '' %></span></h4>
 		<h4><span class="text-muted"><%= @new_day.exercise.explanation.present? ? "运动情况：#{@new_day.exercise.explanation}。" : '' %></span></h4>
+		<h4><span class="text-muted"><%= @new_day.snacks.first.explanation.present? ? "加餐：#{@new_day.snacks.first.explanation}。" : '' %></span></h4>
 		  <h2 class="featurette-heading">营养师反馈 </h2>
           <h3 class="lead"><%= @new_day.comment %></h3>
         </div>

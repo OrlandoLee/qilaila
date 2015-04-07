@@ -1,15 +1,24 @@
 class NewDaysController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_new_day, only: [:show, :edit, :update, :destroy]
 
   # GET /new_days
   # GET /new_days.json
+  
+  def choose
+    
+  end
+  
   def index
-    @new_days = NewDay.all
+    @new_days = current_user.new_days
   end
 
   # GET /new_days/1
   # GET /new_days/1.json
   def show
+    if current_user.id != @new_day.user.id
+      redirect_to action: :index, alert: '这个不是你的页面哦'
+    end
   end
 
   # GET /new_days/new
@@ -30,7 +39,7 @@ class NewDaysController < ApplicationController
   # POST /new_days.json
   def create
     @new_day = NewDay.new(new_day_params)
-    @new_day.breakfast.images = new_day_params[:breakfast_attributes][:images]
+    @new_day.user = current_user
     respond_to do |format|
       if @new_day.save
         format.html { redirect_to @new_day, notice: 'New day was successfully created.' }

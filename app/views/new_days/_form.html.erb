@@ -2,41 +2,36 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :comment %>
-    <%= f.input :date %>
-<h1>breakfast </h1>
+    <%= f.input :comment, label: '营养师反馈' %>
+    <%= f.input :date, label: '日期' %>
+<h1>早餐 </h1>
 	<%= f.simple_fields_for :breakfast do |bf| %>
-		<%= bf.input :explanation %>
-		<%= bf.input :time, as: :time %>
+		<%= bf.input :explanation, placeholder: '7点 三明治+牛奶', label: false %>
 		<%= bf.file_field :images, multiple: true %>
 	<% end %>
-	<h1>lunch </h1>
+	<h1>午餐 </h1>
 	<%= f.simple_fields_for :lunch do |lf| %>
-		<%= lf.input :explanation %>
-		<%= lf.input :time, as: :time %>
+		<%= lf.input :explanation, placeholder: '12点  白菜肉丝+菠菜牛肉+芹菜香干+茭瓜虾皮（菜为3人份）+杂粮米糊+米饭', label: false %>
 		<%= lf.file_field :images, multiple: true %>
 	<% end %>
-	<h1>dinner </h1>
+	<h1>晚餐 </h1>
 	<%= f.simple_fields_for :dinner do |df| %>
-		<%= df.input :explanation %>
-		<%= df.input :time, as: :time %>
+		<%= df.input :explanation, placeholder: '6点  菠菜鸡蛋面+糖拌水萝卜', label: false %>
 		<%= df.file_field :images, multiple: true %>
 	<% end %>
-	<h1>exercise </h1>
+	<h1>运动 </h1>
 	<%= f.simple_fields_for :exercise do |ef| %>
-		<%= ef.input :explanation %>
-		<%= ef.input :time, as: :time %>
-		<%= ef.file_field :images, multiple: true %>
+		<%= ef.input :explanation, placeholder: '8点 今天游泳进行了1000米', label: false %>
+		<%= ef.file_field :images, multiple: true%>点击'choose files'上传图片
 	<% end %>
-	<h1>snacks </h1>
+	<h1>零食 </h1>
 	<%= f.simple_fields_for :snacks do |sf| %>
-		<%= sf.input :explanation %>
-		<%= sf.input :time, as: :time %>
+		<%= sf.input :explanation, placeholder: '早上10点 一个小菠萝+酸奶。晚上10点一杯，牛奶' , label: false %>
 		<%= sf.file_field :images, multiple: true %>
 	<% end %>
   </div>
-
+<br>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, '提交' %>
   </div>
 <% end %>

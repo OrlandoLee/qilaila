@@ -24,11 +24,11 @@
 		  <% @new_day.dinner.images.each do |image| %>
 			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>
-		  <% @new_day.snacks.first.images.each do |image| %>
-			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
-		  <% end %>
 		</div>
 		<div class="col-md-3">
+			<% @new_day.snacks.first.images.each do |image| %>
+			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% end %>
 		  <% @new_day.exercise.images.each do |image| %>
 			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>

@@ -1,4 +1,5 @@
 class Snack < ActiveRecord::Base
    belongs_to :new_day
-   mount_uploaders :images, ImageUploader
+   has_many :snack_images
+    accepts_nested_attributes_for :snack_images
 end

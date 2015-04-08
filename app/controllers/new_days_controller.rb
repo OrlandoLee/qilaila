@@ -38,10 +38,40 @@ class NewDaysController < ApplicationController
   # POST /new_days
   # POST /new_days.json
   def create
+    breakfast_images = new_day_params[:breakfast_attributes].delete(:breakfast_images)
+    lunch_images = new_day_params[:lunch_attributes].delete(:lunch_images)
+    dinner_images = new_day_params[:dinner_attributes].delete(:dinner_images)
+    snack_images = new_day_params[:snacks_attributes]['0'].delete(:snack_images)
+    exercise_images = new_day_params[:exercise_attributes].delete(:exercise_images)
     @new_day = NewDay.new(new_day_params)
     @new_day.user = current_user
     respond_to do |format|
       if @new_day.save
+        if breakfast_images.present?
+        breakfast_images.each do |image|
+          BreakfastImage.create!(:image => image, :breakfast_id => @new_day.breakfast.id)
+        end
+        end
+        if lunch_images.present?
+        lunch_images.each do |image|
+          LunchImage.create!(:image => image, :lunch_id => @new_day.lunch.id)
+        end
+        end
+        if dinner_images.present?
+        dinner_images.each do |image|
+          DinnerImage.create!(:image => image, :dinner_id => @new_day.dinner.id)
+        end
+        end
+        if snack_images.present?
+        snack_images.each do |image|
+          SnackImage.create!(:image => image, :snack_id => @new_day.snacks.first.id)
+        end
+        end
+        if exercise_images.present?
+        exercise_images.each do |image|
+          ExerciseImage.create!(:image => image, :exercise_id => @new_day.exercise.id)
+        end
+        end
         format.html { redirect_to @new_day, notice: 'New day was successfully created.' }
         format.json { render :show, status: :created, location: @new_day }
       else

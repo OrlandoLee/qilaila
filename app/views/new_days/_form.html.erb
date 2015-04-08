@@ -7,27 +7,27 @@
 <h1>早餐 </h1>
 	<%= f.simple_fields_for :breakfast do |bf| %>
 		<%= bf.input :explanation, placeholder: '7点 三明治+牛奶', label: false %>
-		<%= bf.file_field :images, multiple: true %>
+		<%= bf.file_field :breakfast_images, multiple: true %>
 	<% end %>
 	<h1>午餐 </h1>
 	<%= f.simple_fields_for :lunch do |lf| %>
 		<%= lf.input :explanation, placeholder: '12点  白菜肉丝+菠菜牛肉+芹菜香干+茭瓜虾皮（菜为3人份）+杂粮米糊+米饭', label: false %>
-		<%= lf.file_field :images, multiple: true %>
+		<%= lf.file_field :lunch_images, multiple: true %>
 	<% end %>
 	<h1>晚餐 </h1>
 	<%= f.simple_fields_for :dinner do |df| %>
 		<%= df.input :explanation, placeholder: '6点  菠菜鸡蛋面+糖拌水萝卜', label: false %>
-		<%= df.file_field :images, multiple: true %>
+		<%= df.file_field :dinner_images, multiple: true %>
 	<% end %>
 	<h1>运动 </h1>
 	<%= f.simple_fields_for :exercise do |ef| %>
 		<%= ef.input :explanation, placeholder: '8点 今天游泳进行了1000米', label: false %>
-		<%= ef.file_field :images, multiple: true%>点击'choose files'上传图片
+		<%= ef.file_field :exercise_images, multiple: true%>点击'choose files'上传图片
 	<% end %>
 	<h1>零食 </h1>
 	<%= f.simple_fields_for :snacks do |sf| %>
 		<%= sf.input :explanation, placeholder: '早上10点 一个小菠萝+酸奶。晚上10点一杯，牛奶' , label: false %>
-		<%= sf.file_field :images, multiple: true %>
+		<%= sf.file_field :snack_images, multiple: true %>
 	<% end %>
   </div>
 <br>

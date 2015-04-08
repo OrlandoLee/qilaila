@@ -1,4 +1,5 @@
 class Exercise < ActiveRecord::Base
    belongs_to :new_day
-   mount_uploaders :images, ImageUploader
+   has_many :exercise_images
+   accepts_nested_attributes_for :exercise_images
 end

@@ -15,22 +15,22 @@
           <h3 class="lead"><%= @new_day.comment %></h3>
         </div>
         <div class="col-md-2">
-		  <% @new_day.breakfast.images.each do |image| %>
-			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% @new_day.breakfast.breakfast_images.each do |breakfast_image| %>
+			<%= image_tag(breakfast_image.image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>
-		  <% @new_day.lunch.images.each do |image| %>
-			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% @new_day.lunch.lunch_images.each do |lunch_image| %>
+			<%= image_tag(lunch_image.image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>
-		  <% @new_day.dinner.images.each do |image| %>
-			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% @new_day.dinner.dinner_images.each do |dinner_image| %>
+			<%= image_tag(dinner_image.image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>
 		</div>
 		<div class="col-md-3">
-			<% @new_day.snacks.first.images.each do |image| %>
-			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+			<% @new_day.snacks.first.snack_images.each do |snack_image| %>
+			<%= image_tag(snack_image.image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>
-		  <% @new_day.exercise.images.each do |image| %>
-			<%= image_tag(image.url, class: 'featurette-image img-responsive center-block') %>
+		  <% @new_day.exercise.exercise_images.each do |exercise_image| %>
+			<%= image_tag(exercise_image.image.url, class: 'featurette-image img-responsive center-block') %>
 		  <% end %>
         </div>
       </div>

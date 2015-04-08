@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404212320) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20150408040637) do
 
   create_table "answers", force: true do |t|
     t.string   "user_id"
@@ -24,6 +21,13 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.string   "content"
   end
 
+  create_table "breakfast_images", force: true do |t|
+    t.integer  "breakfast_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "breakfasts", force: true do |t|
     t.text     "comment"
     t.text     "explanation"
@@ -31,7 +35,13 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.json     "images"
+  end
+
+  create_table "dinner_images", force: true do |t|
+    t.integer  "dinner_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "dinners", force: true do |t|
@@ -41,7 +51,13 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.json     "images"
+  end
+
+  create_table "exercise_images", force: true do |t|
+    t.integer  "exercise_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "exercises", force: true do |t|
@@ -51,7 +67,13 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.json     "images"
+  end
+
+  create_table "lunch_images", force: true do |t|
+    t.integer  "lunch_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "lunches", force: true do |t|
@@ -61,7 +83,6 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.json     "images"
   end
 
   create_table "new_days", force: true do |t|
@@ -85,6 +106,13 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.datetime "updated_at"
   end
 
+  create_table "snack_images", force: true do |t|
+    t.integer  "snack_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "snacks", force: true do |t|
     t.text     "comment"
     t.text     "explanation"
@@ -92,7 +120,6 @@ ActiveRecord::Schema.define(version: 20150404212320) do
     t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.json     "images"
   end
 
   create_table "users", force: true do |t|

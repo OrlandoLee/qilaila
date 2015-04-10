@@ -10,7 +10,11 @@ class NewDaysController < ApplicationController
   end
   
   def index
-    @new_days = current_user.new_days
+    if current_user.nutri?
+      @new_days = NewDay.where(:comment => nil).where(:date => 1.days.ago..Date.today).order(created_at: :desc)
+    else
+      @new_days = current_user.new_days.order(created_at: :desc)
+    end
   end
 
   # GET /new_days/1

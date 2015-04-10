@@ -1,49 +1,134 @@
+<!-- Carousel
+================================================== -->
 
+<h1><%= @new_day.date %></h1>
+      
 <div class="container marketing"> 
-<hr class="featurette-divider">
-<p id="notice"><%= notice %></p>
+  <% if @new_day.comment.present? %>
+	<hr class="featurette-divider">
+	<div class="row">
+		<div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>营养师反馈</h2>
+          <p>
+			<%= @new_day.comment %>
+		   </p>
+         </div>
+       <div class="col-lg-4">
+        </div>
+	</div>
+  <% end %>
 
+	<% if @new_day.breakfast.explanation.present? || @new_day.breakfast.breakfast_images.size > 0 %>
+	<hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+	          <h2 class="featurette-heading">早餐</h2>
+		<% if @new_day.breakfast.explanation.present? %>
+          <p class="lead"><%= @new_day.breakfast.explanation %></p>
+		<% end %>
+        </div>
+        <div class="col-md-5">
+			<% @new_day.breakfast.breakfast_images.each do |breakfast_image| %>
+				<%= image_tag(breakfast_image.image.url, class: 'featurette-image img-responsive center-block') %>
+				<br>
+			  <% end %>
+        </div>
+      </div>
+     <% end %>
+
+	<% if @new_day.lunch.explanation.present? || @new_day.lunch.lunch_images.size > 0 %>
+      <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading"><%= @new_day.date %> </h2>
-		<h4><span class="text-muted"> <%= @new_day.breakfast.explanation.present? ? "早餐：#{@new_day.breakfast.explanation}。" : '' %></span></h4>
-		<h4><span class="text-muted"><%= @new_day.lunch.explanation.present? ? "午餐：#{@new_day.lunch.explanation}。" : '' %></span></h4>
-		<h4><span class="text-muted"><%= @new_day.dinner.explanation.present? ? "晚餐：#{@new_day.dinner.explanation}。" : '' %></span></h4>
-		<h4><span class="text-muted"><%= @new_day.exercise.explanation.present? ? "运动情况：#{@new_day.exercise.explanation}。" : '' %></span></h4>
-		<h4><span class="text-muted"><%= @new_day.snacks.first.explanation.present? ? "加餐：#{@new_day.snacks.first.explanation}。" : '' %></span></h4>
-		<h4><span class="text-muted"><%= @new_day.question.present? ? "用户提问：#{@new_day.question}。" : '' %></span></h4>
-		<% if @new_day.comment.present? %>
-		  <h2 class="featurette-heading">营养师反馈 </h2>
-          <h3 class="lead"><%= @new_day.comment %></h3>
+	          <h2 class="featurette-heading">午餐</h2>
+		<% if @new_day.lunch.explanation.present? %>
+          <p class="lead"><%= @new_day.lunch.explanation %></p>
 		<% end %>
         </div>
-        <div class="col-md-2">
-		<br> 
-		  <% @new_day.breakfast.breakfast_images.each do |breakfast_image| %>
-			<%= image_tag(breakfast_image.image.url, class: 'featurette-image img-responsive center-block') %>
-		  <% end %>
-		<br> 
-		  <% @new_day.lunch.lunch_images.each do |lunch_image| %>
-			<%= image_tag(lunch_image.image.url, class: 'featurette-image img-responsive center-block') %>
-		  <% end %>
-			<br>
-		  <% @new_day.dinner.dinner_images.each do |dinner_image| %>
-			<%= image_tag(dinner_image.image.url, class: 'featurette-image img-responsive center-block') %>
-		  <% end %>
-		</div>
-		<div class="col-md-3">
-				<br> 
-			<% @new_day.snacks.first.snack_images.each do |snack_image| %>
-			<%= image_tag(snack_image.image.url, class: 'featurette-image img-responsive center-block') %>
-		  <% end %>
-			<br> 
-		  <% @new_day.exercise.exercise_images.each do |exercise_image| %>
-			<%= image_tag(exercise_image.image.url, class: 'featurette-image img-responsive center-block') %>
-		  <% end %>
+        <div class="col-md-5">
+			<% @new_day.lunch.lunch_images.each do |lunch_image| %>
+				<%= image_tag(lunch_image.image.url, class: 'featurette-image img-responsive center-block') %>
+				<br>
+			  <% end %>
         </div>
       </div>
+     <% end %>
+
+	<% if @new_day.dinner.explanation.present? || @new_day.dinner.dinner_images.size > 0 %>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+	          <h2 class="featurette-heading">晚餐</h2>
+		<% if @new_day.dinner.explanation.present? %>
+          <p class="lead"><%= @new_day.dinner.explanation %></p>
+		<% end %>
+        </div>
+        <div class="col-md-5">
+			<% @new_day.dinner.dinner_images.each do |dinner_image| %>
+				<%= image_tag(dinner_image.image.url, class: 'featurette-image img-responsive center-block') %>
+				<br>
+			  <% end %>
+        </div>
       </div>
+     <% end %>
+
+	<% if @new_day.snacks.first.explanation.present? || @new_day.snacks.first.snack_images.size > 0 %>
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+	          <h2 class="featurette-heading">加餐</h2>
+		<% if @new_day.snacks.first.explanation.present? %>
+          <p class="lead"><%= @new_day.snacks.first.explanation %></p>
+		<% end %>
+        </div>
+        <div class="col-md-5">
+			<% @new_day.snacks.first.snack_images.each do |snack_image| %>
+				<%= image_tag(snack_image.image.url, class: 'featurette-image img-responsive center-block') %>
+				<br>
+			  <% end %>
+        </div>
+      </div>
+     <% end %>
+
+	<% if @new_day.exercise.explanation.present? || @new_day.exercise.exercise_images.size > 0 %>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+	     <h2 class="featurette-heading">运动情况</h2>
+		<% if @new_day.exercise.explanation.present? %>
+          <p class="lead"><%= @new_day.exercise.explanation %></p>
+		<% end %>
+        </div>
+        <div class="col-md-5">
+			<% @new_day.exercise.exercise_images.each do |exercise_image| %>
+				<%= image_tag(exercise_image.image.url, class: 'featurette-image img-responsive center-block') %>
+				<br>
+			  <% end %>
+        </div>
+      </div>
+     <% end %>
+
+	<% if @new_day.question.present? %>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+		<% if @new_day.question.present? %>
+          <h2 class="featurette-heading">用户提问</h2>
+          <p class="lead"><%= @new_day.question %></p>
+		<% end %>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+     <% end %>
+</div>
 
 <% if !@new_day.present? || !@new_day.comment.present? %>
 	<% if current_user.nutri? %>

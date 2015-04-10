@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408040637) do
+ActiveRecord::Schema.define(version: 20150410033930) do
 
   create_table "answers", force: true do |t|
     t.string   "user_id"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20150408040637) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.text     "question"
   end
 
   create_table "potential_answers", force: true do |t|
@@ -135,6 +136,7 @@ ActiveRecord::Schema.define(version: 20150408040637) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "nutri"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

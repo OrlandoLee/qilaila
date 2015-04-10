@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'new_days/choose' => 'new_days#choose'
+  resources :new_days
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

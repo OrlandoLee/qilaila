@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="https://d4z6dx8qrln4r.cloudfront.net/NgNIMM-55123d6f6f502-fallback.css?v=4248720">
+
+<%= simple_form_for(@new_day) do |f| %>
+  <%= f.error_notification %>
+
+ <% if !current_user.nutri? %>
+<div class="form-inline">
+    <%= f.input :date, label: false %>
+</div>
+
+<h3>早餐 </h3>
+	<%= f.simple_fields_for :breakfast do |bf| %>
+	<div class="row field textfield active">
+			<%= bf.input :explanation, placeholder: '7点 三明治+牛奶', label: false %>
+			<%= bf.file_field :breakfast_images, multiple: true %>
+	</div>	
+	<% end %>
+	<h3>午餐 </h3>
+	<%= f.simple_fields_for :lunch do |lf| %>
+	<div class="row field textfield active">
+		<%= lf.input :explanation, placeholder: '12点  白菜肉丝+菠菜牛肉+芹菜香干+茭瓜虾皮（菜为3人份）+杂粮米糊+米饭', label: false %>
+		<%= lf.file_field :lunch_images, multiple: true %>
+	</div>
+	<% end %>
+	<h3>晚餐 </h3>
+	<%= f.simple_fields_for :dinner do |df| %>
+	<div class="row field textfield active">
+		<%= df.input :explanation, placeholder: '6点  菠菜鸡蛋面+糖拌水萝卜', label: false %>
+		<%= df.file_field :dinner_images, multiple: true %>
+	</div>
+	<% end %>
+	<h3>运动 </h3>
+	<%= f.simple_fields_for :exercise do |ef| %>
+	<div class="row field textfield active">
+		<%= ef.input :explanation, placeholder: '8点 今天游泳进行了1000米', label: false %>
+		<%= ef.file_field :exercise_images, multiple: true%>
+	</div>
+	<% end %>
+	<h3>零食 </h3>
+	<%= f.simple_fields_for :snacks do |sf| %>
+	<div class="row field textfield active">
+		<%= sf.input :explanation, placeholder: '早上10点 一个小菠萝+酸奶。晚上10点一杯，牛奶' , label: false %>
+		<%= sf.file_field :snack_images, multiple: true %>
+	</div>
+	<% end %>
+	<h3>用户提问 </h3>
+	<div class="row field textfield active">
+	<%= f.input :question, placeholder: '蔬菜还是没有办法做到一天4个拳头大小的量，有没有好建议？',label: false %>
+	</div>
+	<% end %>
+  </div>
+<br>
+<div id="footer" class="last row footer-fallback">
+	<%= f.submit '发送给营养师',:class => 'active' %>
+</div>
+
+<% end %>
+
+
+

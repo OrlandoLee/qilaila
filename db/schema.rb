@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322000629) do
+ActiveRecord::Schema.define(version: 20150410033930) do
 
   create_table "answers", force: true do |t|
     t.string   "user_id"
@@ -19,6 +19,79 @@ ActiveRecord::Schema.define(version: 20150322000629) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "content"
+  end
+
+  create_table "breakfast_images", force: true do |t|
+    t.integer  "breakfast_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "breakfasts", force: true do |t|
+    t.text     "comment"
+    t.text     "explanation"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dinner_images", force: true do |t|
+    t.integer  "dinner_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dinners", force: true do |t|
+    t.text     "comment"
+    t.text     "explanation"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercise_images", force: true do |t|
+    t.integer  "exercise_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises", force: true do |t|
+    t.text     "comment"
+    t.text     "explanation"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lunch_images", force: true do |t|
+    t.integer  "lunch_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lunches", force: true do |t|
+    t.text     "comment"
+    t.text     "explanation"
+    t.time     "time"
+    t.integer  "new_day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "new_days", force: true do |t|
+    t.text     "comment"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.text     "question"
   end
 
   create_table "potential_answers", force: true do |t|
@@ -30,6 +103,22 @@ ActiveRecord::Schema.define(version: 20150322000629) do
 
   create_table "questions", force: true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "snack_images", force: true do |t|
+    t.integer  "snack_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "snacks", force: true do |t|
+    t.text     "comment"
+    t.text     "explanation"
+    t.time     "time"
+    t.integer  "new_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +136,7 @@ ActiveRecord::Schema.define(version: 20150322000629) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "nutri"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

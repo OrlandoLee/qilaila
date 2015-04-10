@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/carrierwaveuploader/carrierwave.git
+  revision: 12ec8017360a3a20696f6ec9e807a971e00d04c1
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,7 +38,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (5.1.7.1)
+    autoprefixer-rails (5.1.8)
       execjs
       json
     bcrypt (3.1.10)
@@ -39,7 +49,7 @@ GEM
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
-    coffee-script (2.3.0)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
@@ -51,10 +61,10 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    execjs (2.4.0)
+    execjs (2.5.0)
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.11)
+    jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -130,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
+  carrierwave!
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)

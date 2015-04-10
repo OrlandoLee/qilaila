@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyText
+  explaination: MyText
+  time: 
+  new_day_id: 1
+
+two:
+  comment: MyText
+  explaination: MyText
+  time: 
+  new_day_id: 1

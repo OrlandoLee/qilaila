@@ -1,5 +1,5 @@
 class NewDaysController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :set_new_day, only: [:show, :edit, :update, :destroy]
 
   # GET /new_days
@@ -20,9 +20,9 @@ class NewDaysController < ApplicationController
   # GET /new_days/1
   # GET /new_days/1.json
   def show
-    if current_user.id != @new_day.user.id
-      redirect_to action: :index, alert: '这个不是你的页面哦'
-    end
+    # if current_user.id != @new_day.user.id
+    #       redirect_to action: :index, alert: '这个不是你的页面哦'
+    #     end
   end
 
   # GET /new_days/new

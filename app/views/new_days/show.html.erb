@@ -131,7 +131,7 @@
 </div>
 
 <% if !@new_day.present? || !@new_day.comment.present? %>
-	<% if current_user.nutri? %>
+	<% if current_user && current_user.nutri? %>
 	<%= simple_form_for(@new_day) do |f| %>
 	  <%= f.error_notification %>
 	  <div class="form-inputs">

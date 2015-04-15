@@ -15,10 +15,11 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /var/run/mysqld/mysqld.sock
+  
 development:
   <<: *default
   database: qilaila_development
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -51,3 +52,4 @@ production:
   database: qilaila_production
   username: root
   password: <%= ENV['QILAILA_DATABASE_PASSWORD'] %>
+  socket: /var/run/mysqld/mysqld.sock

@@ -15,8 +15,7 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
-
+  socket: /var/run/mysqld/mysqld.sock
 development:
   <<: *default
   database: qilaila_development
@@ -50,5 +49,5 @@ test:
 production:
   <<: *default
   database: qilaila_production
-  username: qilaila
+  username: root
   password: <%= ENV['QILAILA_DATABASE_PASSWORD'] %>

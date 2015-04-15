@@ -1,5 +1,4 @@
-source 'https://rubygems.org'
-
+source 'https://ruby.taobao.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
@@ -27,6 +26,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git'
+gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

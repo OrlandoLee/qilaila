@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave.git'
 gem 'rails_12factor', group: :production
+gem 'simple_token_authentication', '~> 1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

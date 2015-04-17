@@ -1,5 +1,5 @@
 class NewDaysController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!
   before_action :set_new_day, only: [:show, :edit, :update, :destroy]
 
   # GET /new_days

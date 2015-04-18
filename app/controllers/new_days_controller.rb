@@ -90,7 +90,7 @@ class NewDaysController < ApplicationController
   def update
     respond_to do |format|
       if @new_day.update(new_day_params)
-        format.html { redirect_to @new_day, notice: 'New day was successfully updated.' }
+        format.html { render text: '已经把反馈传给用户了，谢谢您' }
         format.json { render :show, status: :ok, location: @new_day }
       else
         format.html { render :edit }
